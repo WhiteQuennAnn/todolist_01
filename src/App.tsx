@@ -13,7 +13,7 @@ function App() {
 //GUI
     return (
         <div className="App">
-            <Todolist/>
+            <Todolist  tasks={tasks} title={todoListTitle}/>
         </div>
 
     );
