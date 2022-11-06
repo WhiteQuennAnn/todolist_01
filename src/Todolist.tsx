@@ -13,7 +13,7 @@ type TaskType = {
     isDone: boolean
 }
 
-const Todolist = (props: any) => {
+const Todolist = (props: TodoListPropsType) => {
     return (
         <div>
             <h3>What to learn</h3>
