@@ -14,10 +14,6 @@ function App() {
     return (
         <div className="App">
             <Todolist/>
-            <Todolist/>
-            <Todolist/>
-            <Todolist/>
-
         </div>
 
     );
