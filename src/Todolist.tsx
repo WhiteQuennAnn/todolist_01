@@ -1,6 +1,19 @@
 import React from 'react';
 //rsc
-const Todolist = () => {
+
+type TodoListPropsType = {
+    title: string
+    tasks: Array<TaskType>
+
+}
+
+type TaskType = {
+    id: number
+    title: string
+    isDone: boolean
+}
+
+const Todolist = (props: any) => {
     return (
         <div>
             <h3>What to learn</h3>
