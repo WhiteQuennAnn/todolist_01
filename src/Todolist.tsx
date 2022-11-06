@@ -16,7 +16,7 @@ type TaskType = {
 const Todolist = (props: TodoListPropsType) => {
     return (
         <div>
-            <h3>What to learn</h3>
+            <h3>{props.title}</h3>
             <div>
                 <input/>
                 <button>+</button>
