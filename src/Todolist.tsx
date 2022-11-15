@@ -4,6 +4,7 @@ import React from 'react';
 type TodoListPropsType = {
     title: string
     tasks: Array<TaskType>
+    removeTask: ()=>void
 
 }
 

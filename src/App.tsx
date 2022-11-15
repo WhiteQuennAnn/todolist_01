@@ -11,12 +11,14 @@ function App() {
         {id: 3, title: "React", isDone: false},
         {id: 4, title: "ReactJS", isDone: false},
     ]
+const removeTask=()=>{
 
+}
 
     //GUI
     return (
         <div className="App">
-            <Todolist title={todoListTitle} tasks={tasks} />
+            <Todolist title={todoListTitle} tasks={tasks} removeTask={removeTask}/>
 
         </div>
 
