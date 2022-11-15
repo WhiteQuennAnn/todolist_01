@@ -4,7 +4,7 @@ import React from 'react';
 type TodoListPropsType = {
     title: string
     tasks: Array<TaskType>
-    removeTask: (taskId: number)=>void
+    removeTask: (taskId: number) => void
 
 }
 
@@ -33,7 +33,6 @@ const Todolist = (props: TodoListPropsType) => {
                             }}> X
                             </button>
                             <span>{el.title}</span>
-
                         </li>
                     )
                 })}

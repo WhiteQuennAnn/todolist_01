@@ -5,14 +5,17 @@ import Todolist from "./Todolist";
 function App() {
     //Bll
     const todoListTitle = "What to learn";
-    const tasks = [
+    let tasks = [
         {id: 1, title: "HTML&CSS", isDone: true},
         {id: 2, title: "JS", isDone: true},
         {id: 3, title: "React", isDone: false},
         {id: 4, title: "ReactJS", isDone: false},
     ]
     const removeTask = (taskId: number) => {
-        console.log(taskId)
+
+        tasks = tasks.filter((el) =>
+            el.id !== taskId)
+        console.log(tasks)
     }
 
     //GUI
