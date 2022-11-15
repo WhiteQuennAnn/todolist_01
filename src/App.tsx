@@ -19,9 +19,6 @@ function App() {
         setTasks(tasks = tasks.filter((el) =>
             el.id !== taskId))
     }
-
-
-
     const filterTask=()=>{
         console.log("kik;kk")
     }
@@ -33,10 +30,7 @@ function App() {
                 tasks={tasks}
                 removeTask={removeTask}
                 filterTask={filterTask}/>
-
-
         </div>
-
     );
 }
 
