@@ -22,7 +22,8 @@ const Todolist = (props: TodoListPropsType) => {
                 <button>+</button>
             </div>
             <ul>
-                {props.tasks.map((el)=>{
+                {props.tasks.map((el, index)=>{
+                    debugger
                     return (
                         <li key={el.id}><input type="checkbox" checked={el.isDone}/> <span>{el.title}</span></li>
                     )
