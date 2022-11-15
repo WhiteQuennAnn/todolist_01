@@ -11,9 +11,9 @@ function App() {
         {id: 3, title: "React", isDone: false},
         {id: 4, title: "ReactJS", isDone: false},
     ]
-const removeTask=()=>{
-
-}
+    const removeTask = (taskId: number) => {
+        console.log(taskId)
+    }
 
     //GUI
     return (
