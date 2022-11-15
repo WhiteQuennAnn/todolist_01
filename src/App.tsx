@@ -21,7 +21,7 @@ function App() {
 //GUI
     return (
         <div className="App">
-            <Todolist tasks={tasks} title={todoListTitle}/>
+            <Todolist title={todoListTitle} tasks={tasks} />
             <Todolist title={todoListTitle_2} tasks={tasks_2}/>
         </div>
 
