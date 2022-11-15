@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 //rsc
 
 type TodoListPropsType = {
@@ -15,6 +15,19 @@ type TaskType = {
 }
 
 const Todolist = (props: TodoListPropsType) => {
+    const [filter, setFilter] = useState("All")
+    let colander = tasks
+    if (filter === "Active") {
+        colander = tasks.filter(el => !el.isDone)
+    }
+    if (filter === "Completed") {
+        colander = tasks.filter(el => el.isDone)
+    }
+
+    const filterTask = (filterValue: string) => {
+        setFilter(filterValue)
+    }
+
     return (
         <div>
             <h3>{props.title}</h3>

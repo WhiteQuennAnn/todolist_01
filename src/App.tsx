@@ -18,21 +18,18 @@ function App() {
         setTasks(tasks = tasks.filter((el) =>
             el.id !== taskId))
     }
-    const [filter, setFilter] = useState("All")
-
-    let colander = tasks
-
-    if (filter === "Active") {
-        colander = tasks.filter(el => !el.isDone)
-    }
-    if (filter === "Completed") {
-        colander = tasks.filter(el => el.isDone)
-    }
-
-
-    const filterTask = (filterValue: string) => {
-        setFilter(filterValue)
-    }
+    // const [filter, setFilter] = useState("All")
+    // let colander = tasks
+    // if (filter === "Active") {
+    //     colander = tasks.filter(el => !el.isDone)
+    // }
+    // if (filter === "Completed") {
+    //     colander = tasks.filter(el => el.isDone)
+    // }
+    //
+    // const filterTask = (filterValue: string) => {
+    //     setFilter(filterValue)
+    // }
     //GUI
     return (
         <div className="App">
