@@ -12,26 +12,33 @@ function App() {
         {id: 4, title: "ReactJS", isDone: false},
     ])
 
-    let collander=tasks.map(el=>el.isDone)
-
 
     const removeTask = (taskId: number) => {
-
-        // tasks = tasks.filter((el) =>
-        //     el.id !== taskId)
         console.log(tasks)
         setTasks(tasks = tasks.filter((el) =>
             el.id !== taskId))
     }
-    const filterTask=(filterValue: string)=>{
-        console.log(filterValue)
+    const [filter, setFilter] = useState("All")
+
+    let colander = tasks
+
+    if (filter === "Active") {
+        colander = tasks.filter(el => !el.isDone)
+    }
+    if (filter === "Completed") {
+        colander = tasks.filter(el => el.isDone)
+    }
+
+
+    const filterTask = (filterValue: string) => {
+        setFilter(filterValue)
     }
     //GUI
     return (
         <div className="App">
             <Todolist
                 title={todoListTitle}
-                tasks={tasks}
+                tasks={colander}
                 removeTask={removeTask}
                 filterTask={filterTask}/>
         </div>
