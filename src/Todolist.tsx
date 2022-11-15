@@ -22,15 +22,21 @@ const Todolist = (props: TodoListPropsType) => {
                 <button>+</button>
             </div>
             <ul>
-                {props.tasks.map((el, index)=>{
+                {props.tasks.map((el, index) => {
 
                     return (
-                        <li key={el.id}><input type="checkbox" checked={el.isDone}/> <span>{el.title}</span></li>
+                        <li key={el.id}>
+                            <input type="checkbox" checked={el.isDone}/>
+                            <button onClick={() => {
+                                console.log(el.id)
+                            }}> X
+                            </button>
+                            <span>{el.title}</span>
+
+                        </li>
                     )
                 })}
-                {/*<li><input type="checkbox" checked={props.tasks[0].isDone}/> <span>{props.tasks[0].title}</span></li>*/}
-                {/*<li><input type="checkbox" checked={props.tasks[1].isDone}/> <span>{props.tasks[1].title}</span></li>*/}
-                {/*<li><input type="checkbox" checked={props.tasks[2].isDone}/> <span>{props.tasks[1].title}</span></li>*/}
+
             </ul>
             <div>
                 <button>All</button>
