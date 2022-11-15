@@ -19,8 +19,8 @@ function App() {
         setTasks(tasks = tasks.filter((el) =>
             el.id !== taskId))
     }
-    const filterTask=()=>{
-        console.log("kik;kk")
+    const filterTask=(filterValue: string)=>{
+        console.log(filterValue)
     }
     //GUI
     return (
