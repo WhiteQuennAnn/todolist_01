@@ -11,6 +11,10 @@ function App() {
         {id: 3, title: "React", isDone: false},
         {id: 4, title: "ReactJS", isDone: false},
     ])
+
+    let collander=tasks.map(el=>el.isDone)
+
+
     const removeTask = (taskId: number) => {
 
         // tasks = tasks.filter((el) =>
