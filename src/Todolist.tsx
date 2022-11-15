@@ -39,9 +39,9 @@ const Todolist = (props: TodoListPropsType) => {
 
             </ul>
             <div>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
+                <button onClick={()=>{}}>All</button>
+                <button onClick={()=>{}}>Active</button>
+                <button onClick={()=>{}}>Completed</button>
             </div>
         </div>
     );
