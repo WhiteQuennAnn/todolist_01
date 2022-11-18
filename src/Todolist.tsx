@@ -1,5 +1,6 @@
 import React, {ChangeEvent, useState} from 'react';
 import {FilterValuesType} from './App';
+import {Button} from "./components/Button";
 
 type TaskType = {
     id: string
@@ -40,9 +41,10 @@ export function Todolist(props: PropsType) {
         props.changeFilter("all")
     }
 
-const tsarFooHandler = (filterValue: FilterValuesType)=>{
-    props.changeFilter(filterValue)
-   }
+    const tsarFooHandler = (filterValue: FilterValuesType) => {
+
+        props.changeFilter(filterValue)
+    }
 
     return <div>
         <h3>{props.title}</h3>
@@ -60,23 +62,27 @@ const tsarFooHandler = (filterValue: FilterValuesType)=>{
         <ul>
             {
                 props.tasks.map(t => {
-                    const removeTaskHandler =()=> {
+                    const removeTaskHandler = () => {
                         props.removeTask(t.id)
                     }
                     return (
-                    <li key={t.id}>
-                        <input type="checkbox" checked={t.isDone}/>
-                        <span>{t.title}</span>
-                        <button onClick={removeTaskHandler}>x </button>
-                    </li>
-                )})
+                        <li key={t.id}>
+                            <input type="checkbox" checked={t.isDone}/>
+                            <span>{t.title}</span>
+                            <button onClick={removeTaskHandler}>x</button>
+                        </li>
+                    )
+                })
             }
         </ul>
         <div>
+            <Button callBack={()=>tsarFooHandler("all")} nickName={"All"}/>
+            <Button callBack={()=>tsarFooHandler("active")} nickName={"Active"}/>
+            <Button callBack={()=>tsarFooHandler("completed")} nickName={"Completed"}/>
 
-            <button onClick={()=>tsarFooHandler("all")}>All</button>
-            <button onClick={()=>tsarFooHandler("active")}>Active</button>
-            <button onClick={()=>tsarFooHandler("completed")}>Completed</button>
+            {/*<button onClick={() => tsarFooHandler("all")}>All</button>*/}
+            {/*<button onClick={() => tsarFooHandler("active")}>Active</button>*/}
+            {/*<button onClick={() => tsarFooHandler("completed")}>Completed</button>*/}
 
             {/*<button onClick={allChangeFilterHandler}>All</button>*/}
             {/*<button onClick={activeChangeFilterHandler}>*/}
