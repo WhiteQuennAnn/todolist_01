@@ -19,7 +19,9 @@ export function Todolist(props: PropsType) {
     return <div>
         <h3>{props.title}</h3>
         <div>
-            <input onChange={(event)=>console.log(event.currentTarget.value)}/>
+            <input onChange={(event)=> {
+                console.log(event.currentTarget.value)
+            }}/>
             <button onClick={()=>props.addTask()}>+
             </button>
         </div>
