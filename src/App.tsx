@@ -17,7 +17,7 @@ function App() {
         ]
     );
 
-    const addTask = () => {
+    const addTask = (title: string) => {
         const newTask = {id: v1(), title: "newNewNew", isDone: false};
         setTasks([newTask, ...tasks]);
     }
@@ -49,7 +49,6 @@ function App() {
                       removeTask={removeTask}
                       changeFilter={changeFilter}
                       addTask={addTask}/>
-
         </div>
     );
 }
