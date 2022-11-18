@@ -8,16 +8,18 @@ export type FilterValuesType = "all" | "active" | "completed";
 function App() {
 
     let [tasks, setTasks] = useState([
-        {id: v1(), title: "HTML&CSS", isDone: true},
-        {id: v1(), title: "JS", isDone: true},
-        {id: v1(), title: "ReactJS", isDone: false},
-        {id: v1(), title: "Rest API", isDone: false},
-        {id: v1(), title: "GraphQL", isDone: false},
+            {id: v1(), title: "HTML&CSS", isDone: true},
+            {id: v1(), title: "JS", isDone: true},
+            {id: v1(), title: "ReactJS", isDone: false},
+            {id: v1(), title: "Rest API", isDone: false},
+            {id: v1(), title: "GraphQL", isDone: false},
 
-    ]);
+        ]
+    );
+
     const addTask = () => {
-        const newtASK = {id: v1(), title: "newNewNew", isDone: false};
-        console.log("dfgvdgv")
+        const newTask = {id: v1(), title: "newNewNew", isDone: false};
+        setTasks([newTask, ...tasks]);
     }
 
     function removeTask(id: string) {
