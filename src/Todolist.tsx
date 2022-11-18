@@ -28,11 +28,11 @@ export function Todolist(props: PropsType) {
         setTitle(event.currentTarget.value)
     }
 
-    const onKeyDownHandler = (event: KeyboardEvent) => {
+
+    const onKeyDownHandler = (event:KeyboardEvent) => {
         if (event.key === "Enter") {
             addTaskHandler()
         }
-
     }
 
     return <div>
