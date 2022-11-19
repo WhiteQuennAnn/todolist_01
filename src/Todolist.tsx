@@ -76,9 +76,9 @@ export function Todolist(props: PropsType) {
             }
         </ul>
         <div>
-            <Button callBack={()=>tsarFooHandler("all")} nickName={"All"}/>
-            <Button callBack={()=>tsarFooHandler("active")} nickName={"Active"}/>
-            <Button callBack={()=>tsarFooHandler("completed")} nickName={"Completed"}/>
+            <Button callBack={() => tsarFooHandler("all")} nickName={"All"}/>
+            <Button callBack={() => tsarFooHandler("active")} nickName={"Active"}/>
+            <Button callBack={() => tsarFooHandler("completed")} nickName={"Completed"}/>
 
             {/*<button onClick={() => tsarFooHandler("all")}>All</button>*/}
             {/*<button onClick={() => tsarFooHandler("active")}>Active</button>*/}
