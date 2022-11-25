@@ -15,11 +15,12 @@ function App() {
         {id: v1(), title: "GraphQL", isDone: false},
     ]);
     const changeIsDone = (taskId: string, isDoneValue: boolean) => {
-        let currentTask = tasks.find(el => el.id === taskId);
-        if (currentTask) {
-            currentTask.isDone=isDoneValue;
-            setTasks([...tasks])
-        }
+        // let currentTask = tasks.find(el => el.id === taskId);
+        // if (currentTask) {
+        //     currentTask.isDone=isDoneValue;
+        //     setTasks([...tasks])
+        // }
+        setTasks( tasks.map(el=>el.id === taskId ? {...el, isDone:isDoneValue} : el))
 
     }
 
