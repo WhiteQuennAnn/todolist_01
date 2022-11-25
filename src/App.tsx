@@ -14,6 +14,14 @@ function App() {
         {id: v1(), title: "Rest API", isDone: false},
         {id: v1(), title: "GraphQL", isDone: false},
     ]);
+    const changeIsDone = (taskId: string, isDoneValue: boolean) => {
+        let currentTask = tasks.find(el => el.id === taskId);
+        if (currentTask) {
+            currentTask.isDone=isDoneValue;
+            setTasks([...tasks])
+        }
+
+    }
 
     function removeTask(id: string) {
         let filteredTasks = tasks.filter(t => t.id !== id);
@@ -41,9 +49,6 @@ function App() {
         setFilter(value);
     }
 
-    const changeIsDone = (taskId: string, isDoneValue: boolean) => {
-        console.log(isDoneValue)
-    }
 
     return (
         <div className="App">
