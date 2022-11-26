@@ -9,3 +9,6 @@
     background-color: aqua;
 }
 
+.isDone {
+    opacity: 0.5;
+}
