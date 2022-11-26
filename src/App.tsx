@@ -58,7 +58,9 @@ function App() {
                       removeTask={removeTask}
                       changeFilter={changeFilter}
                       addTask={addTask}
-                      changeIsDone={changeIsDone}/>
+                      changeIsDone={changeIsDone}
+                      filter: FilterValuesType
+            />
         </div>
     );
 }
