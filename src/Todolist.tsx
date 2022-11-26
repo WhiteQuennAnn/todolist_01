@@ -22,7 +22,7 @@ export function Todolist(props: PropsType) {
 
     let [title, setTitle] = useState("")
     let [error, setError] = useState<null | string>(null)
-    const [filter, setFilterValue] = useState('all')
+    const [filterValue, setFilterValue] = useState('all')
 
     const addTask = () => {
         if (title.trim() !== '') {
@@ -89,12 +89,12 @@ export function Todolist(props: PropsType) {
             }
         </ul>
         <div>
-            <button className={filter === 'all' ? styles.activeFilter : ''} onClick={onAllClickHandler}>All
+            <button className={filterValue === 'all' ? styles.activeFilter : ''} onClick={onAllClickHandler}>All
             </button>
-            <button className={filter === 'active' ? styles.activeFilter : ''}
+            <button className={filterValue === 'active' ? styles.activeFilter : ''}
                     onClick={onActiveClickHandler}>Active
             </button>
-            <button className={filter === 'completed' ? styles.activeFilter : ''}
+            <button className={filterValue === 'completed' ? styles.activeFilter : ''}
                     onClick={onCompletedClickHandler}>Completed
             </button>
         </div>
