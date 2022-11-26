@@ -21,8 +21,8 @@ type PropsType = {
 export function Todolist(props: PropsType) {
 
     let [title, setTitle] = useState("")
-    let [error, setError] = useState<null|string>(null)
-    const [filterValue, setFilterValue] = useState('all')
+    let [error, setError] = useState<null | string>(null)
+    const [filter, setFilterValue] = useState('all')
 
     const addTask = () => {
         if (title.trim() !== '') {
@@ -44,16 +44,18 @@ export function Todolist(props: PropsType) {
     }
 
     const onAllClickHandler = () => {
+        setFilterValue("all")
         props.changeFilter("all")
     };
 
     const onActiveClickHandler = () => {
+        setFilterValue("active")
         props.changeFilter("active")
     };
     const onCompletedClickHandler = () => {
+        setFilterValue("completed")
         props.changeFilter("completed")
     };
-
 
 
     return <div>
@@ -86,10 +88,15 @@ export function Todolist(props: PropsType) {
                 })
             }
         </ul>
-        <div >
-            <button className={ props.filter=== 'all' ? styles.activeFilter : ''} onClick={onAllClickHandler}>All</button>
-            <button className={props.filter=== 'active' ? styles.activeFilter : ''} onClick={onActiveClickHandler}>Active</button>
-            <button className={props.filter=== 'completed' ? styles.activeFilter : ''} onClick={onCompletedClickHandler}>Completed</button>
+        <div>
+            <button className={filter === 'all' ? styles.activeFilter : ''} onClick={onAllClickHandler}>All
+            </button>
+            <button className={filter === 'active' ? styles.activeFilter : ''}
+                    onClick={onActiveClickHandler}>Active
+            </button>
+            <button className={filter === 'completed' ? styles.activeFilter : ''}
+                    onClick={onCompletedClickHandler}>Completed
+            </button>
         </div>
     </div>
 }

@@ -20,7 +20,7 @@ function App() {
         //     currentTask.isDone=isDoneValue;
         //     setTasks([...tasks])
         // }
-        setTasks( tasks.map(el=>el.id === taskId ? {...el, isDone:isDoneValue} : el))
+        setTasks(tasks.map(el => el.id === taskId ? {...el, isDone: isDoneValue} : el))
 
     }
 
@@ -59,7 +59,8 @@ function App() {
                       changeFilter={changeFilter}
                       addTask={addTask}
                       changeIsDone={changeIsDone}
-                      filter: FilterValuesType
+                      filter={filter}
+
             />
         </div>
     );
