@@ -1,6 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
 import styles from './Todolist.module.css';
+import {CheckBox} from "./components/CheckBox";
 
 type TaskType = {
     id: string
@@ -57,6 +58,9 @@ export function Todolist(props: PropsType) {
         props.changeFilter("completed")
     };
 
+    const changeIsDoneHandler= (isDone: boolean, taskId: string)  => {
+        props.changeIsDone(  taskId, isDone)
+    }
 
     return <div>
         <h3>{props.title}</h3>
@@ -71,17 +75,23 @@ export function Todolist(props: PropsType) {
 
         {error && <div className={styles.errorMassage}> {error}</div>}
 
-
         <ul>
             {
                 props.tasks.map(t => {
                     const onClickHandler = () => props.removeTask(t.id)
-                    const changeIsDoneHandler = (event: ChangeEvent<HTMLInputElement>) => {
-                        props.changeIsDone(t.id, event.currentTarget.checked)
-                    }
+                    // const changeIsDoneHandler = (event: ChangeEvent<HTMLInputElement>) => {
+                    //     props.changeIsDone(t.id, event.currentTarget.checked)
+                    // }
 
-                    return <li key={t.id} className={ t.isDone ? styles.isDone : ''}>
-                        <input type="checkbox" checked={t.isDone} onChange={changeIsDoneHandler}/>
+                    // const changeIsDoneHandler= (isDone: boolean)  => {
+                    //     props.changeIsDone(t.id, isDone)
+                    // }
+
+                    return <li key={t.id} className={t.isDone ? styles.isDone : ''}>
+
+
+                        <CheckBox isDone={t.isDone} callBack={()=>changeIsDoneHandler(t.id)}/>
+                        {/*<input type="checkbox" checked={t.isDone} onChange={changeIsDoneHandler}/>*/}
                         <span>{t.title}</span>
                         <button onClick={onClickHandler}>x</button>
                     </li>
