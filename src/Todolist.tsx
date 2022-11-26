@@ -20,14 +20,14 @@ type PropsType = {
 export function Todolist(props: PropsType) {
 
     let [title, setTitle] = useState("")
-    let [error, setError] = useState(false)
+    let [error, setError] = useState<null|string>(null)
 
     const addTask = () => {
         if (title.trim() !== '') {
             props.addTask(title.trim());
             setTitle("");
         } else {
-            setError(true);
+            setError('Title is required');
         }
     }
 
@@ -56,7 +56,7 @@ export function Todolist(props: PropsType) {
             <button onClick={addTask}>+</button>
         </div>
 
-        {error && <div className={styles.errorMassage}> Title is required</div>}
+        {error && <div className={styles.errorMassage}> {error}</div>}
 
 
         <ul>
@@ -75,10 +75,10 @@ export function Todolist(props: PropsType) {
                 })
             }
         </ul>
-        <div>
-            <button onClick={onAllClickHandler}>All</button>
-            <button onClick={onActiveClickHandler}>Active</button>
-            <button onClick={onCompletedClickHandler}>Completed</button>
+        <div >
+            <button className={styles.activeFilter} onClick={onAllClickHandler}>All</button>
+            <button className={styles.activeFilter} onClick={onActiveClickHandler}>Active</button>
+            <button className={styles.activeFilter} onClick={onCompletedClickHandler}>Completed</button>
         </div>
     </div>
 }

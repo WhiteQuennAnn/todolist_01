@@ -4,3 +4,8 @@
 .errorMassage {
     color: red;
 }
+
+.activeFilter {
+    background-color: aqua;
+}
+
