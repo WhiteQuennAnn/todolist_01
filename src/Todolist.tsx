@@ -20,10 +20,11 @@ type PropsType = {
 export function Todolist(props: PropsType) {
 
     let [title, setTitle] = useState("")
+    let [error, setError] = useState(false)
 
     const addTask = () => {
-        if (title.trim()!=='')
-        props.addTask(title.trim());
+        if (title.trim() !== '')
+            props.addTask(title.trim());
         setTitle("");
     }
 
@@ -50,6 +51,9 @@ export function Todolist(props: PropsType) {
             />
             <button onClick={addTask}>+</button>
         </div>
+        {error && <div className={styles.errorMassage}> Title is required</div>}
+
+
         <ul>
             {
                 props.tasks.map(t => {
