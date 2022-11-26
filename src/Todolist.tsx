@@ -58,8 +58,8 @@ export function Todolist(props: PropsType) {
         props.changeFilter("completed")
     };
 
-    const changeIsDoneHandler= (isDone: boolean, taskId: string)  => {
-        props.changeIsDone(  taskId, isDone)
+    const changeIsDoneHandler = (taskId: string, isDone: boolean) => {
+        props.changeIsDone(taskId, isDone)
     }
 
     return <div>
@@ -79,18 +79,10 @@ export function Todolist(props: PropsType) {
             {
                 props.tasks.map(t => {
                     const onClickHandler = () => props.removeTask(t.id)
-                    // const changeIsDoneHandler = (event: ChangeEvent<HTMLInputElement>) => {
-                    //     props.changeIsDone(t.id, event.currentTarget.checked)
-                    // }
-
-                    // const changeIsDoneHandler= (isDone: boolean)  => {
-                    //     props.changeIsDone(t.id, isDone)
-                    // }
 
                     return <li key={t.id} className={t.isDone ? styles.isDone : ''}>
 
-
-                        <CheckBox isDone={t.isDone} callBack={()=>changeIsDoneHandler(t.id)}/>
+                        <CheckBox isDone={t.isDone} callBack={(isDone) => changeIsDoneHandler(t.id, isDone)}/>
                         {/*<input type="checkbox" checked={t.isDone} onChange={changeIsDoneHandler}/>*/}
                         <span>{t.title}</span>
                         <button onClick={onClickHandler}>x</button>
