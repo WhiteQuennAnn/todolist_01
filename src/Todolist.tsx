@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
+import styles from './Todolist.module.css';
 
 type TaskType = {
     id: string
@@ -21,7 +22,8 @@ export function Todolist(props: PropsType) {
     let [title, setTitle] = useState("")
 
     const addTask = () => {
-        props.addTask(title);
+        if (title.trim()!=='')
+        props.addTask(title.trim());
         setTitle("");
     }
 
