@@ -66,13 +66,15 @@ function App() {
         setTasksObj({...tasksObj, [todolistId]: [...tasksObj[todolistId], newTask]})
     }
 
-    function changeStatus(taskId: string, isDone: boolean) {
+    function changeStatus(todolistId: string, taskId: string, newIsDone: boolean) {
         // let task = tasks.find(t => t.id === taskId);
         // if (task) {
         //     task.isDone = isDone;
         // }
         //
         // setTasks([...tasks]);
+
+        setTasksObj({...tasksObj, [todolistId]: tasksObj[todolistId].map(el => el.id===taskId ?{...el,isDone: newIsDone} : el)})
     }
 
     function changeFilter(todolistId: string, filterValue: FilterValuesType) {
