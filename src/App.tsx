@@ -53,6 +53,10 @@ function App() {
 
     // let [filter, setFilter] = useState<FilterValuesType>("all");
 
+    const removeTodolistHandler = (todolistId: string) => {
+        setTodolists(todolists.filter(el => el.id !== todolistId))
+    }
+
     function removeTask(todolistId: string, taskId: string) {
         //     let filteredTasks = tasks.filter(t => t.id != id);
         //     setTasks(filteredTasks);
@@ -74,7 +78,10 @@ function App() {
         //
         // setTasks([...tasks]);
 
-        setTasksObj({...tasksObj, [todolistId]: tasksObj[todolistId].map(el => el.id===taskId ?{...el,isDone: newIsDone} : el)})
+        setTasksObj({
+            ...tasksObj,
+            [todolistId]: tasksObj[todolistId].map(el => el.id === taskId ? {...el, isDone: newIsDone} : el)
+        })
     }
 
     function changeFilter(todolistId: string, filterValue: FilterValuesType) {
@@ -107,6 +114,7 @@ function App() {
                         addTask={addTask}
                         changeTaskStatus={changeStatus}
                         filter={tl.filter}
+                        removeTodolistHandler={removeTodolistHandler}
                     />
                 )
             })}
