@@ -62,24 +62,17 @@ export function Todolist(props: PropsType) {
         props.editTodolist(props.id, currentTitle)
     }
 
+    const changeTaskHandler = (tID: string, currentTitle: string) => {
+        props.changeTask(props.id, tID, currentTitle)
+    }
+
     return <div>
         <h3>
-            {/*{props.title}*/}
             <EditableSpan title={props.title} callBack={editTodolistHandler}/>
             <button onClick={removeTodolist}>x</button>
         </h3>
 
         <Input callBack={addTaskHandler}/>
-
-        {/*<div>*/}
-        {/*    <input value={title}*/}
-        {/*           onChange={onChangeHandler}*/}
-        {/*           onKeyPress={onKeyPressHandler}*/}
-        {/*           className={error ? "error" : ""}*/}
-        {/*    />*/}
-        {/*    <button onClick={addTask}>+</button>*/}
-        {/*    {error && <div className="error-message">{error}</div>}*/}
-        {/*</div>*/}
         <ul>
             {
                 props.tasks.map(t => {
@@ -88,13 +81,13 @@ export function Todolist(props: PropsType) {
                         let newIsDoneValue = e.currentTarget.checked;
                         props.changeTaskStatus(t.id, newIsDoneValue, props.id);
                     }
-                    const changeTaskHandler = (currentTitle: string,) => {
-                        props.changeTask(props.id, t.id, currentTitle)
-                    }
+                    // const changeTaskHandler = (currentTitle: string,) => {
+                    //     props.changeTask(props.id, t.id, currentTitle)
+                    // }
 
                     return <li key={t.id} className={t.isDone ? "is-done" : ""}>
                         <input type="checkbox" onChange={onChangeHandler} checked={t.isDone}/>
-                        <EditableSpan title={t.title} callBack={changeTaskHandler}/>
+                        <EditableSpan title={t.title} callBack={(newTitle) => changeTaskHandler(newTitle, t.id)}/>
                         <button onClick={onClickHandler}>x</button>
                     </li>
                 })
