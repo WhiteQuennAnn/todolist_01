@@ -2,6 +2,7 @@ import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
 import {FilterValuesType} from './App';
 import Input from "./components/Input";
 import {EditableSpan} from "./components/EditableSpan";
+import {Button} from "@mui/material";
 
 export type TaskType = {
     id: string
@@ -88,7 +89,8 @@ export function Todolist(props: PropsType) {
                     return <li key={t.id} className={t.isDone ? "is-done" : ""}>
                         <input type="checkbox" onChange={onChangeHandler} checked={t.isDone}/>
                         <EditableSpan title={t.title} callBack={(newTitle) => changeTaskHandler(newTitle, t.id)}/>
-                        <button onClick={onClickHandler}>x</button>
+                        {/*<button onClick={onClickHandler}>x</button>*/}
+                        <Button variant="contained"  onClick={onClickHandler}>X</Button>
                     </li>
                 })
             }
