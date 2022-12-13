@@ -7,6 +7,7 @@ type InputPropsType = {
 const Input = (props: InputPropsType) => {
     let [title, setTitle] = useState("")
     let [error, setError] = useState<string | null>(null)
+
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
     }
