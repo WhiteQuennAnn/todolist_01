@@ -1,7 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 
 type InputPropsType = {
-    callBack: () => void
+    callBack: (newTitle: string) => void
 }
 
 
@@ -20,7 +20,7 @@ const Input = (props: InputPropsType) => {
     const addTask = () => {
         let newTitle = title.trim();
         if (newTitle !== "") {
-            props.addTask(newTitle, props.id);
+            props.callBack(newTitle);
             setTitle("");
         } else {
             setError("Title is required");
