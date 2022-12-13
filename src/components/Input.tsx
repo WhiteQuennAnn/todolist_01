@@ -4,7 +4,6 @@ type InputPropsType = {
     callBack: (newTitle: string) => void
 }
 
-
 const Input = (props: InputPropsType) => {
     let [title, setTitle] = useState("")
     let [error, setError] = useState<string | null>(null)

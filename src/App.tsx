@@ -87,12 +87,18 @@ function App() {
     }
 
     const addTodolist = (newTitle: string) => {
-
+        const newTodolistId = v1()
+        const newTodolist: TodolistType = {id: newTodolistId, title: newTitle, filter: "all"}
+        setTodolists([newTodolist, ...todolists])
+        setTasks({...tasks,  [newTodolistId]: [
+                {id: v1(), title: "Milk", isDone: true},
+                {id: v1(), title: "React Book", isDone: true}
+            ]})
     }
 
     return (
         <div className="App">
-       <Input callBack={addTodolist}/>
+            <Input callBack={addTodolist}/>
             {
                 todolists.map(tl => {
                     let allTodolistTasks = tasks[tl.id];
