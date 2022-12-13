@@ -36,7 +36,6 @@ function App() {
         ]
     });
 
-
     function removeTask(id: string, todolistId: string) {
         //достанем нужный массив по todolistId:
         let todolistTasks = tasks[todolistId];
