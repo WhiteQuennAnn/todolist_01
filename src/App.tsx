@@ -120,6 +120,7 @@ function App() {
 
     return (
         <div className="App">
+            <ButtonAppBar/>
             <AddItemForm addItem={addTodolist} />
             {
                 todolists.map(tl => {
