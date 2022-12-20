@@ -1,4 +1,5 @@
 import {FilterValuesType} from "../App";
+import {removeTaskAC} from "./tasksReducer";
 
 export const filterReducer = (state: FilterValuesType, action: any) => {
     switch (action.type) {
@@ -8,7 +9,7 @@ export const filterReducer = (state: FilterValuesType, action: any) => {
         default: return state
     }
 }
-
+type changeFilterACType = ReturnType<typeof changeFilterAC>
 
 export const changeFilterAC = (value: FilterValuesType) => {
     return {
