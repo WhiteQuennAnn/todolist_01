@@ -3,6 +3,7 @@ import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import {AddItemForm} from './AddItemForm';
+import ButtonAppBar from "./ButtonAppBar";
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistType = {
@@ -17,6 +18,7 @@ type TasksStateType = {
 
 
 function App() {
+
     function removeTask(id: string, todolistId: string) {
         //достанем нужный массив по todolistId:
         let todolistTasks = tasks[todolistId];
