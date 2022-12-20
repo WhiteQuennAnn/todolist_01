@@ -4,6 +4,7 @@ import {AddItemForm} from './AddItemForm';
 import {EditableSpan} from './EditableSpan';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Button from '@mui/material/Button';
 
 export type TaskType = {
     id: string
@@ -74,6 +75,10 @@ export function Todolist(props: PropsType) {
             }
         </ul>
         <div>
+            <Button variant="contained" onClick={onAllClickHandler}>All</Button>
+            <Button variant="contained" onClick={onActiveClickHandler}>Active</Button>
+            <Button variant="contained" onClick={onCompletedClickHandler}>Completed</Button>
+
             <button className={props.filter === 'all' ? "active-filter" : ""}
                     onClick={onAllClickHandler}>All
             </button>
