@@ -10,6 +10,6 @@ export const TasksReducer = (state: any, action: any) => {
 
 export const removeTaskAC = () => {
     return {
-
+        type: " REMOVE-TASK"
     }
 }
