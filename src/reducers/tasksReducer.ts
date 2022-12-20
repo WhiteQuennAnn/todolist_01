@@ -1,15 +1,16 @@
 export const TasksReducer = (state: any, action: any) => {
     switch (action.type) {
         case 'XXX': {
-             return state
+            return state
         }
         default:
             return state
     }
 }
 
-export const removeTaskAC = ((id: string) => {
+export const removeTaskAC = (id: string) => {
     return {
-        type: " REMOVE-TASK"
+        type: " REMOVE-TASK",
+        id: id
     }
 }
