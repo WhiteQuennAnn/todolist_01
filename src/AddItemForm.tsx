@@ -36,7 +36,10 @@ export function AddItemForm(props: AddItemFormPropsType) {
             size="small"
             id="outlined-basic"
             label="Outlined"
-            variant="outlined" />
+            variant="outlined"
+            onChange={onChangeHandler}
+            onKeyPress={onKeyPressHandler}
+            value={title}/>
         {/*<input value={title}*/}
         {/*       onChange={onChangeHandler}*/}
         {/*       onKeyPress={onKeyPressHandler}*/}
