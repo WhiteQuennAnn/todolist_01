@@ -35,7 +35,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
         <TextField
             size="small"
             id="outlined-basic"
-            label="Outlined"
+            label={error ? "Title is required" : ' type out here'}
             variant="outlined"
             onChange={onChangeHandler}
             onKeyPress={onKeyPressHandler}
@@ -60,6 +60,6 @@ export function AddItemForm(props: AddItemFormPropsType) {
                     background: 'black'
                 }}>+</Button>
 
-        {error && <div className="error-message">{error}</div>}
+        {/*{error && <div className="error-message">{error}</div>}*/}
     </div>
 }
