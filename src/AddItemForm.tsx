@@ -40,6 +40,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
             onChange={onChangeHandler}
             onKeyPress={onKeyPressHandler}
             value={title}/>
+
         {/*<input value={title}*/}
         {/*       onChange={onChangeHandler}*/}
         {/*       onKeyPress={onKeyPressHandler}*/}
