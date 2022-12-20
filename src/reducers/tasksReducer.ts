@@ -11,7 +11,7 @@ export const TasksReducer = (state: any, action: any) => {
 export const removeTaskAC = (id: string) => {
     return {
         type: " REMOVE-TASK",
-        payload: {
+        payload: { // коробочка для хлама))
             id: id
         }
     }
