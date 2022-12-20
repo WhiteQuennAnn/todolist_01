@@ -129,7 +129,7 @@ function App() {
                     <AddItemForm addItem={addTodolist}/>
                 </Grid>
 
-                <Grid container>
+                <Grid container spacing={3}>
                     {
                         todolists.map(tl => {
                             let allTodolistTasks = tasks[tl.id];
@@ -142,7 +142,8 @@ function App() {
                                 tasksForTodolist = allTodolistTasks.filter(t => t.isDone === true);
                             }
 
-                            return <Todolist
+                            return <Grid item>
+                            <Todolist
                                 key={tl.id}
                                 id={tl.id}
                                 title={tl.title}
@@ -156,6 +157,7 @@ function App() {
                                 changeTaskTitle={changeTaskTitle}
                                 changeTodolistTitle={changeTodolistTitle}
                             />
+                            </Grid>
                         })
                     }
                 </Grid>
@@ -164,6 +166,7 @@ function App() {
 
 
         </div>
+
     );
 }
 
