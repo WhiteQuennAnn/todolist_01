@@ -25,14 +25,14 @@ function App() {
     ])
 
     function removeTask(id: string) {
-        let filteredTasks = tasks.filter(t => t.id != id);
-        setTasks(filteredTasks);
+        // let filteredTasks = tasks.filter(t => t.id != id);
+        // setTasks(filteredTasks);
     }
 
     function addTask(title: string) {
-        let task = {id: v1(), title: title, isDone: false};
-        let newTasks = [task, ...tasks];
-        setTasks(newTasks);
+        // let task = {id: v1(), title: title, isDone: false};
+        // let newTasks = [task, ...tasks];
+        // setTasks(newTasks);
     }
 
     let [filter, setFilter] = useState<FilterValuesType>("all");
