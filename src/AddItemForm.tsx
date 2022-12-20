@@ -39,7 +39,9 @@ export function AddItemForm(props: AddItemFormPropsType) {
             variant="outlined"
             onChange={onChangeHandler}
             onKeyPress={onKeyPressHandler}
-            value={title}/>
+            value={title}
+            error={!!error}
+        />
 
         {/*<input value={title}*/}
         {/*       onChange={onChangeHandler}*/}
@@ -50,7 +52,13 @@ export function AddItemForm(props: AddItemFormPropsType) {
         {/*<button onClick={addItem}>+</button>*/}
 
         <Button variant="contained" onClick={addItem}
-                style={{maxWidth: '38px', maxHeight: '38px', minWidth: '38px', minHeight: '38px', background:'black'}}>+</Button>
+                style={{
+                    maxWidth: '38px',
+                    maxHeight: '38px',
+                    minWidth: '38px',
+                    minHeight: '38px',
+                    background: 'black'
+                }}>+</Button>
 
         {error && <div className="error-message">{error}</div>}
     </div>
