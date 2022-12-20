@@ -125,7 +125,8 @@ function App() {
             <ButtonAppBar/>
 
             <Container fixed>
-                <Grid container>
+                <Grid container style={{padding: "30px"}}>
+
                     <AddItemForm addItem={addTodolist}/>
                 </Grid>
 
