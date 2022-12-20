@@ -33,6 +33,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
 
     return <div>
         <TextField
+            size="small"
             id="outlined-basic"
             label="Outlined"
             variant="outlined" />
@@ -41,6 +42,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
         {/*       onKeyPress={onKeyPressHandler}*/}
         {/*       className={error ? "error" : ""}*/}
         {/*/>*/}
+
         {/*<button onClick={addItem}>+</button>*/}
 
         <Button variant="contained" onClick={addItem}
