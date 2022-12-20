@@ -7,3 +7,9 @@ export const TasksReducer = (state: any, action: any) => {
             return state
     }
 }
+
+export const removeTaskAC = () => {
+    return {
+
+    }
+}
