@@ -8,7 +8,7 @@ export const TasksReducer = (state: any, action: any) => {
     }
 }
 
-export const removeTaskAC = () => {
+export const removeTaskAC = ((id: string) => {
     return {
         type: " REMOVE-TASK"
     }
