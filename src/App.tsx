@@ -38,8 +38,6 @@ function App() {
         taskDispatch(newStateAC(title))
     }
 
-    //let [filter, setFilter] = useState<FilterValuesType>("all");
-
     let [filter, filterDispatch] = useReducer(filterReducer, "all")
 
     let tasksForTodolist = tasks;
