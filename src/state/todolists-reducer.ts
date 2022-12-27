@@ -9,10 +9,6 @@ export const todolistsReducer = (state: Array<TodolistType>, action: tsarType) =
         case 'ADD-TODOLIST' : {
             let newTodolistId = v1();
             let newTodolist: TodolistType = {id: newTodolistId, title: action.payload.newTodolistTitle, filter: 'all'};
-            // setTodolists([newTodolist, ...todolists]);
-            // setTasks({
-            //     ...tasks,
-            //     [newTodolistId]: []
             return [...state, newTodolist]
         }
         default:
