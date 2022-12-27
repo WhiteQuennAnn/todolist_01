@@ -14,6 +14,6 @@ test('user reducer should increment only childrenCount', () => {
 
     const endState = userReducer(startState, {type: 'INCREMENT-CHILDREN-COUNT'})
 
-    expect(endState.age).toBe(21)
-    expect(endState.childrenCount).toBe(2)
+    expect(endState.age).toBe(20)
+    expect(endState.childrenCount).toBe(3)
 })
