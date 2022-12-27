@@ -18,12 +18,10 @@ export const todolistsReducer = (state: Array<TodolistType>, action: tsarType) =
             } : el)
         }
         case 'CHANGE-TODOLIST-FILTER' : {
-            // const todolist = todolists.find(tl => tl.id === id);
-            // if (todolist) {
-            //     // если нашёлся - изменим ему заголовок
-            //     todolist.title = title;
-            //     setTodolists([...todolists]);
-            return state.map (el=>el.id===action.payload.todolistId2 ? {...el, filter: action.payload.newFilter}: el)
+            return state.map(el => el.id === action.payload.todolistId2 ? {
+                ...el,
+                filter: action.payload.newFilter
+            } : el)
         }
         default:
             return state
