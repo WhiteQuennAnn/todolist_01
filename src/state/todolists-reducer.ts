@@ -1,4 +1,4 @@
-import {TodolistType} from "../App";
+import {FilterValuesType, TodolistType} from "../App";
 import {v1} from "uuid";
 
 export const todolistsReducer = (state: Array<TodolistType>, action: tsarType) => {
@@ -17,15 +17,25 @@ export const todolistsReducer = (state: Array<TodolistType>, action: tsarType) =
                 title: action.payload.newTodolistTitle
             } : el)
         }
+        case 'CHANGE-TODOLIST-FILTER' : {
+            // const todolist = todolists.find(tl => tl.id === id);
+            // if (todolist) {
+            //     // если нашёлся - изменим ему заголовок
+            //     todolist.title = title;
+            //     setTodolists([...todolists]);
+            return state.map (el=>el.id===action.payload.todolistId2 ? {...el, filter: action.payload.newFilter}: el)
+        }
         default:
             return state
     }
 }
-type tsarType = removeTodolistACType | addTodolistACType | changeTodolistTitleACType
+
+type tsarType = removeTodolistACType | addTodolistACType | changeTodolistTitleACType | changeTodolistFilterACType
 
 type removeTodolistACType = ReturnType<typeof removeTodolistAC>
 type addTodolistACType = ReturnType<typeof addTodolistAC>
 type changeTodolistTitleACType = ReturnType<typeof changeTodolistTitleAC>
+type changeTodolistFilterACType = ReturnType<typeof changeTodolistFilterAC>
 
 export const removeTodolistAC = (todolistId1: string) => {
     return {
@@ -45,12 +55,21 @@ export const addTodolistAC = (newTodolistTitle: string) => {
     } as const
 }
 
-export const changeTodolistTitleAC = (todolistId2: string, newTodolistTitle: string) => {
+export const changeTodolistTitleAC = (todolistId2: string, newTodolistTitle: FilterValuesType) => {
     return {
         type: 'CHANGE-TODOLIST-TITLE',
         payload: {
             todolistId2,
             newTodolistTitle
+        }
+    } as const
+}
+export const changeTodolistFilterAC = (todolistId2: string, newFilter: string) => {
+    return {
+        type: 'CHANGE-TODOLIST-FILTER',
+        payload: {
+            todolistId2,
+            newFilter
         }
     } as const
 }
