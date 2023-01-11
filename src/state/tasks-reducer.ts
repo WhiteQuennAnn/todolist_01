@@ -1,14 +1,8 @@
 import {FilterValuesType, TasksStateType, TodolistType} from '../App';
 import {v1} from 'uuid';
 
-export type FirstTaskActionType = {
-    type: '',
-
-}
-export type SecondTaskActionType = {
-    type: '',
-
-}
+export type FirstTaskActionType = ReturnType<typeof firstAC>;
+export type SecondTaskActionType = ReturnType<typeof secondAC>
 
 
 type ActionsType =
@@ -30,9 +24,9 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
 }
 
 export const firstAC = () => {
-    return {type: ''}
+    return {type: ''} as const
 }
 export const secondAC = () => {
-    return {type: ''}
+    return {type: ''} as const
 }
 
