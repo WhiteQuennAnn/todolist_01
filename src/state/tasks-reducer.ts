@@ -12,36 +12,17 @@ export type Action1Type = {
     id: string
 }
 export type Action2Type = {
-    type: 'ADD-TODOLIST',
+    type: '2',
     title: string
 }
 
-type ActionsType =
-    Action1Type
-    | Action2Type
+type ActionsType = Action1Type | Action2Type
 
 
 export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksStateType => {
     switch (action.type) {
-        case 'REMOVE-TODOLIST':
-            return state.filter(tl => tl.id != action.id)
-        case 'ADD-TODOLIST':
-            return [...state, {id: v1(), title: action.title, filter: "all"}]
-        case 'CHANGE-TODOLIST-TITLE': {
-            const todolist = state.find(tl => tl.id === action.id);
-            if (todolist) {
-                // если нашёлся - изменим ему заголовок
-                todolist.title = action.title;
-            }
-            return [...state]
-        }
-        case 'CHANGE-TODOLIST-FILTER': {
-            const todolist = state.find(tl => tl.id === action.id);
-            if (todolist) {
-                // если нашёлся - изменим ему заголовок
-                todolist.filter = action.filter;
-            }
-            return [...state];
+        case "1": {
+            return state;
         }
         default:
             return state;
