@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import {
     addTodolistAC,
-    AddTodolistAC, changeTodolistFilterAC,
-    ChangeTodolistFilterAC, changeTodolistTitleAC,
-    ChangeTodolistTitleAC,
+    changeTodolistFilterAC,
+    changeTodolistTitleAC,
     removeTodolistAC,
     todolistsReducer
 } from './todolists-reducer';
