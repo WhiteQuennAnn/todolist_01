@@ -7,21 +7,22 @@ import {
     RemoveTodolistActionType
 } from "./todolists-reducer";
 
-export type Action1Type = {
-    type: '1',
-    id: string
+export type RemoveTaskActionType = {
+    type: 'REMOVE-TASK'
+    taskId: string
+    todolistId: string
 }
 export type Action2Type = {
     type: '2',
     title: string
 }
 
-type ActionsType = Action1Type | Action2Type
+type ActionsType = RemoveTaskActionType | Action2Type
 
 
 export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksStateType => {
     switch (action.type) {
-        case "1": {
+        case "REMOVE-TASK": {
             return {...state};
         }
         case "2": {
@@ -32,8 +33,8 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
     }
 }
 
-export const action1AC = (todolistId: string): Action1Type => {
-    return {type: '1', id: todolistId}
+export const removeTaskAC = (taskId: string, todolistId: string): RemoveTaskActionType => {
+    return {type: 'REMOVE-TASK', taskId, todolistId}
 }
 export const action2AC = (title: string): Action2Type => {
     return {type: '2', title: title}
