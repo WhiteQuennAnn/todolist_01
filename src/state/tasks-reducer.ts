@@ -26,7 +26,8 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
             const stateCopy = {...state}
             const tasks = state[action.todolistId]
             const filteredTasks = tasks.filter(t => t.id !== action.taskId)
-            return {...state};
+            stateCopy[action.todolistId] = filteredTasks
+            return stateCopy;
         }
         case "2": {
             return {...state};
