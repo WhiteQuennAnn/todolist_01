@@ -76,6 +76,7 @@ test('correct task should be added to correct array', () => {
 
     const endState = tasksReducer(startState, action)
 
-    expect().toBe()
-    expect().toBe()
+    expect(['todolistId2'][1]).toBeFalsy()
+    expect(['todolistId1'][1]).toBeTruthy()
+
 })
