@@ -64,7 +64,7 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
         'CHANGE-TASK-TITLE'
         : {
 
-            return state;
+
         }
         default:
             return state;
