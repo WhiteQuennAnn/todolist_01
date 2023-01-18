@@ -63,8 +63,8 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
         case
         'CHANGE-TASK-TITLE'
         : {
-
-
+            const stateCopy = {...state};
+            return stateCopy
         }
         default:
             return state;
