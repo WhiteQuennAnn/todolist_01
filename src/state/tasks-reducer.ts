@@ -36,7 +36,7 @@ type ActionsType =
     | AddTaskActionType
     | ChangeTaskStatusActionType
     | ChangeTaskTitleActionType
-    | AddTodolistActionType
+    | AddTodolistActionType | RemoveTodolistActionType
 
 
 export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksStateType => {
@@ -79,6 +79,11 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
         case "ADD-TODOLIST": {
             const stateCopy = {...state};
             stateCopy[action.todolistId] = [];
+            return stateCopy;
+        }
+        case "REMOVE-TODOLIST": {
+            const stateCopy = {...state};
+            delete stateCopy[action.id];
             return stateCopy;
         }
         default:
